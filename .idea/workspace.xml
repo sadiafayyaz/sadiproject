@@ -15,57 +15,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00b78a2e-0a4f-43c8-a20e-dc8fd0b639ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Fuel_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/main/Odometer_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_a_photo_black_camera.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_local_gas_station_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_local_gas_station_gasoline.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_photo_album_black_galleryofexpence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_photo_library_black_photogalery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fuel__screen.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_odometer__screen.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_3_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Reminder_DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Reminder_transmiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Expence_DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Expence_DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/User_information_DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/User_information_DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Cleaning_layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Cleaning_layout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Engine_Tuning_Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Engine_Tuning_Layout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Fuel_layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Fuel_layout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Maintance_layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Maintance_layout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Purchases_layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expence_Fragments/Purchases_layout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Add_Expenses_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Add_Expenses_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Expense_Detail_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Expense_Detail_Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Capture_image_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Capture_image_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Gallery_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Gallery_Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Add_Reminder_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Add_Reminder_Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Reminder_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Reminder_Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/main/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/main/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add__vehical_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add__vehical_screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_capture_image__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_capture_image__screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add__reminder__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add__reminder__screen.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_compute__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_compute__screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_expense__detail__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_expense__detail__screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery__screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search__screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_engine__tuning__layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_engine__tuning__layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fuel_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fuel_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_maintance_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_maintance_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_purchases_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_purchases_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gallery_list_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_list_views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_reminder__screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reminder__screen.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,33 +109,62 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_compute__screen.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Reminder_DB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+            <state relative-caret-position="199">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="32" />
+              <folding>
+                <element signature="e#573#574#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Reminder_Screen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+            <state relative-caret-position="306">
+              <caret line="120" column="68" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
+              <folding>
+                <element signature="e#1386#1392#0" expanded="true" />
+                <element signature="e#1444#1452#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Expense_Detail_Screen.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Reminder_transmiter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__reminder__screen.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Add_Reminder_Screen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="260" column="13" lean-forward="true" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
-              <folding>
-                <element signature="e#13357#14622#0" expanded="true" />
-                <element signature="e#14621#14622#0" expanded="true" />
-              </folding>
+              <caret line="135" column="57" lean-forward="true" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -170,9 +175,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="valueResourceFile" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -184,6 +189,7 @@
       <find>addV</find>
       <find>add</find>
       <find>addvehical</find>
+      <find>Reminder_Db</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,13 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/Gallery_List_View.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Gallery_DB.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Galery_Views/List_Model.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Galery_Views/Gallery_Model.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Galery_Views/Gallery_Adatpter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Image_View_Screen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Adapter/List_Adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Adapter/Model_Adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Adapter/Custom_Adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/vehical/vehicals.java" />
@@ -217,12 +216,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_capture_image__screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_gallery__screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gallery_list_views.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Capture_image_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Gallery_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/User_information_DB.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fuel_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_maintance_layout.xml" />
@@ -242,13 +238,23 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Fuel_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fuel__screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_expense__detail__screen.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add__vehical_screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/main/Odometer_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Expense_Detail_Screen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_compute__screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Expence_DB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Reminder_DB.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_reminder__screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Reminder_transmiter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Reminder_DB.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add__reminder__screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Add_Reminder_Screen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Reminder_Screen.java" />
       </list>
     </option>
   </component>
@@ -264,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -287,20 +294,40 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="androidcarmanager" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="copmute" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android Car Manager" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Android Car Manager" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Android Car Manager" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Android Car Manager" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/saif project/android-car-manager-master/android-car-manager-master" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -449,7 +476,7 @@
       <window_info id="Build Variants" order="3" sideWeight="0.5010571" side_tool="true" weight="0.32980332" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4989429" weight="0.2249191" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4989429" visible="true" weight="0.22411004" />
       <window_info id="Resources Explorer" order="7" weight="0.32980332" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3285968" />
@@ -477,17 +504,17 @@
       <window_info id="Build Variants" order="3" sideWeight="0.5010571" side_tool="true" weight="0.32980332" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4989429" weight="0.2249191" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.4989429" visible="true" weight="0.2249191" />
       <window_info id="Resources Explorer" order="7" weight="0.32980332" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3285968" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49924356" weight="0.70212764" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49924356" weight="0.7015986" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50226927" side_tool="true" weight="0.34042552" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4977307" visible="true" weight="0.30195382" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3285968" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4977307" weight="0.30195382" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3289689" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.32980332" />
@@ -504,79 +531,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="60% view expence screen completed" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/Login_Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/SignUp_Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login__screen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up__screen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Image_View_Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Adapter/pagerAdaptwe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/User_information_DB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="19" column="76" lean-forward="true" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="118" column="35" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -720,14 +678,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__files__screen.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -801,14 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__notes__screen.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__vehical_screen.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -838,16 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/capture/Gallery_Screen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -872,42 +804,173 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/View_EXPENCES/Search_Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Expence_DB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        <state relative-caret-position="1360">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1313#1314#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#2042#2043#0" expanded="true" />
+            <element signature="e#2070#2071#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Expences/Expense_Detail_Screen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="260" column="13" lean-forward="true" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
+        <state relative-caret-position="3621">
+          <caret line="260" column="13" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_screen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/user_info/profile_screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
           <folding>
-            <element signature="e#13357#14622#0" expanded="true" />
-            <element signature="e#14621#14622#0" expanded="true" />
+            <element signature="e#4243#4390#0" expanded="true" />
+            <element signature="e#4389#4390#0" expanded="true" />
+            <element signature="e#7729#8073#0" expanded="true" />
+            <element signature="e#8072#8073#0" expanded="true" />
+            <element signature="e#8113#8412#0" expanded="true" />
+            <element signature="e#8411#8412#0" expanded="true" />
+            <element signature="e#8453#8703#0" expanded="true" />
+            <element signature="e#8702#8703#0" expanded="true" />
+            <element signature="e#9470#9694#0" expanded="true" />
+            <element signature="e#9693#9694#0" expanded="true" />
+            <element signature="e#9854#10077#0" expanded="true" />
+            <element signature="e#10076#10077#0" expanded="true" />
+            <element signature="e#10226#10446#0" expanded="true" />
+            <element signature="e#10445#10446#0" expanded="true" />
+            <element signature="e#10596#10817#0" expanded="true" />
+            <element signature="e#10816#10817#0" expanded="true" />
+            <element signature="e#10978#11145#0" expanded="true" />
+            <element signature="e#11144#11145#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_compute__screen.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+        <state relative-caret-position="179">
+          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/copmute/Compute_Screen.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__notes__screen.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+        <state relative-caret-position="306">
+          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__files__screen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="40" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_reminder__screen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash__screen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Database/Reminder_DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/Reminder_transmiter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add__reminder__screen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Add_Reminder_Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="135" column="57" lean-forward="true" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/androidcarmanager/add/Reminder_Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="120" column="68" selection-start-line="120" selection-start-column="68" selection-end-line="120" selection-end-column="68" />
+          <folding>
+            <element signature="e#1386#1392#0" expanded="true" />
+            <element signature="e#1444#1452#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

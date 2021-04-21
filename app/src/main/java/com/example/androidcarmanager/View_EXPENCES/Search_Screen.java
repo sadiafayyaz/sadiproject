@@ -66,7 +66,7 @@ public class Search_Screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search__screen);
-        setTitle(Html.fromHtml("<font color='#3477e3'>Search Expences</font>"));
+        setTitle(Html.fromHtml("<font color='#3477e3'>Search Expence</font>"));
 
         Auth = FirebaseAuth.getInstance();
         user = Auth.getCurrentUser();

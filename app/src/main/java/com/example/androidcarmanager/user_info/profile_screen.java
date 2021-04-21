@@ -54,6 +54,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.UUID;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class profile_screen extends AppCompatActivity {
 //    private DatabaseReference databaseReference;
 //    private StorageReference storageReference;
@@ -76,6 +78,10 @@ private DatabaseReference databaseReference;
     EditText namefirstEt,phoneEt,genderEt,namelastEt;
     TextView emailTv;
     Button profilebtn;
+    public CircleImageView imageofUser;
+    public Uri imguri;
+    private StorageReference storageReference;
+ private FirebaseStorage storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +96,8 @@ private DatabaseReference databaseReference;
         }
         databaseReference= FirebaseDatabase.getInstance().getReference("users");
         FirebaseUser user=auth.getCurrentUser();
+        storage =FirebaseStorage.getInstance();
+        storageReference=storage.getReference();
 
 //        initialize views
         namefirstEt=(EditText)findViewById(R.id.etfirstname);
@@ -97,9 +105,19 @@ private DatabaseReference databaseReference;
         phoneEt=(EditText)findViewById(R.id.etphone);
         genderEt=(EditText)findViewById(R.id.etgender);
         emailTv=(TextView)findViewById(R.id.userEmailTv);
+        imageofUser =(CircleImageView) findViewById(R.id.userimage);
 //        set Email from user object of Firebase
         emailTv.setText(user.getEmail());
         profilebtn=(Button)findViewById(R.id.btnprofile);
+
+
+        imageofUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooserpic();
+
+            }
+        });
 
 
         profilebtn.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +166,64 @@ private DatabaseReference databaseReference;
                 Log.d("snapshot",error.toString());
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+            imguri =data.getData();
+            imageofUser.setImageURI(imguri);
+            uploadpicture();
+
+        }
+
+    }
+
+    private void uploadpicture() {
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Uploading image");
+        progressDialog.show();
+        //        Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
+        final String randomkey = UUID.randomUUID().toString();
+        StorageReference riversRef = storageReference.child("images/" + randomkey);
+
+        riversRef.putFile(imguri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        progressDialog.dismiss();
+                        Snackbar.make(findViewById(android.R.id.content),"image uploaded", Snackbar.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+
+                    public void onFailure(@NonNull Exception exception) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(),"Failed to Upload",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                        double progreePercent =(100.00 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                        progressDialog.setMessage("percentage" + (int) progreePercent + "%");
+                    }
+                });
+    }
+
+    private void chooserpic() {
+       {
+            Intent i = new Intent();
+            i.setType("image/*");
+            i.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(i, 1);
+
+        }
+
+
     }
 
 

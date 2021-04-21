@@ -85,11 +85,11 @@ public class Expence_DB {
         this.odometer = odometer;
     }
 
-    public Double getliter() {
+    public Double getLiter() {
         return liter;
     }
 
-    public void setliter(Double liter) {
+    public void setLiter(Double liter) {
         this.liter = liter;
     }
 

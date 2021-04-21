@@ -33,7 +33,7 @@
         android:orientation="vertical"
         android:padding="5dp">
         <TextView
-            android:id="@+id/vehicalname"
+            android:id="@+id/odometerreading"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
@@ -48,7 +48,7 @@
             android:textSize="16sp"
             android:text="Odometer Reading" />
         <TextView
-            android:id="@+id/odometerreading"
+            android:id="@+id/distance"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
@@ -63,7 +63,7 @@
             android:textSize="16sp"
             android:text="Distance" />
         <TextView
-            android:id="@+id/manufectur"
+            android:id="@+id/route"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
@@ -78,7 +78,7 @@
             android:textSize="16sp"
             android:text="Avg. KM/Route" />
         <TextView
-            android:id="@+id/purchasedate"
+            android:id="@+id/kmliter"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:clickable="false"
@@ -97,7 +97,7 @@
             android:textSize="16sp"
             android:text="Avg. KM/Ltr" />
         <TextView
-            android:id="@+id/vmodel"
+            android:id="@+id/fuelkmcost"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
@@ -112,7 +112,7 @@
             android:textSize="16sp"
             android:text="Fuel cost/Km" />
         <TextView
-            android:id="@+id/milagerange"
+            android:id="@+id/fuelconsumption"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
