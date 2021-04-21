@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,10 +40,14 @@ public class Gallery_Screen extends AppCompatActivity {
 
     private DatabaseReference databaseReference1;
     private FirebaseAuth firebaseAuth;
+    private int READ_PERMISSION=787;
+    private int CAMERA_PERMISSION=789;
+    private int WRITE_PERMISSION=790;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery__screen);
+        setTitle(Html.fromHtml("<font color='#3477e3'>Gallery</font>"));
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() == null) {
             finish();
@@ -52,24 +57,29 @@ public class Gallery_Screen extends AppCompatActivity {
         databaseReference1= FirebaseDatabase.getInstance().getReference("users/"+user.getUid()+"/gallery");
 
         gridview=(GridView) findViewById(R.id.gridview);
-        addImage=(ImageButton) findViewById(R.id.capture);
+        addImage=(ImageButton) findViewById(R.id.fabbutton);
 
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Gallery_Screen.this, Capture_image_Screen.class);
 
-//              ask for camera permission if haven't
-                if (ContextCompat.checkSelfPermission(Gallery_Screen.this, Manifest.permission.CAMERA)
-                        == PackageManager.PERMISSION_DENIED){
-                    ActivityCompat.requestPermissions(Gallery_Screen.this, new String[] {Manifest.permission.CAMERA},
-                            100);
+//              ask for permission if haven't
+                if (ContextCompat.checkSelfPermission(Gallery_Screen.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Gallery_Screen.this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION);
+
+                }else
+                if (ContextCompat.checkSelfPermission(Gallery_Screen.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Gallery_Screen.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
                 }else{
-                    startActivity(i);
+                    if (ContextCompat.checkSelfPermission(Gallery_Screen.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(Gallery_Screen.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_PERMISSION);
+                    }else{
+                        startActivity(i);
+                    }
                 }
             }
         });
-
         databaseReference1.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
@@ -88,6 +98,7 @@ public class Gallery_Screen extends AppCompatActivity {
 
 
     }
+
 
     public void setArrayValue(){
         for (int i=0; i<urls.size();i++){

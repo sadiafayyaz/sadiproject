@@ -17,7 +17,7 @@ public class User_information_DB {
         return firstname;
     }
 
-    public void setfirstname(String furstname) { this.firstname= firstname; }
+    public void setfirstname(String firstname) { this.firstname= firstname; }
     public String getlastname() {
         return lastname;
     }
@@ -42,4 +42,3 @@ public class User_information_DB {
     }
 
 }
-

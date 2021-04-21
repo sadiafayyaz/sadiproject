@@ -1,19 +1,32 @@
 package com.example.androidcarmanager.Expences;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -21,29 +34,47 @@ import android.widget.Toast;
 import com.example.androidcarmanager.Database.Expence_DB;
 import com.example.androidcarmanager.R;
 import com.example.androidcarmanager.user_info.Login_Screen;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Expense_Detail_Screen<expense_detail, expense_detail_screen, AddExpenses> extends AppCompatActivity {
     String selectedExpenses;
-    String[] expences={"Maintenance","Fuel","Purchase spare patrs","cleaning","engine tuning"};
+    String[] expences={"Maintenance","fuel","Purchase spare patrs","cleaning","engine tuning"};
     //  data to put
     String title;
     Long date, time;
     Double meterreading, price;
-
+ProgressDialog progressDialog;
     EditText ettitle, etdate,ettime, etmeterReading,etprice;
     Button buttonsave;
+    LinearLayout imagesContainer;
+    ImageView addImgCamera, addImgGallery;
+    private int PICK_IMAGE=786;
+    private int CAMERA_REQUEST=788;
+    private int READ_PERMISSION=787;
+    private int WRITE_PERMISSION=790;
+    private int CAMERA_PERMISSION=789;
+    private Uri filePath;
+    ArrayList<Uri> imagesPathList=new ArrayList<Uri>();
+    ArrayList<String> imagesDbPathList=new ArrayList<String>();
 
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
+
+    private StorageReference storageReference;
+    private FirebaseStorage storage;
 
     private DatabaseReference databaseReference1, databaseReference2;
     private FirebaseAuth Auth;
@@ -78,11 +109,48 @@ public class Expense_Detail_Screen<expense_detail, expense_detail_screen, AddExp
         etmeterReading=(EditText) findViewById(R.id.meterreading);
         etprice=(EditText) findViewById(R.id.expenceprice);
         buttonsave=(Button) findViewById(R.id.expencesave);
+        addImgCamera=(ImageView) findViewById(R.id.addImgCamera);
+        addImgGallery=(ImageView) findViewById(R.id.addImgGallery);
+        imagesContainer= (LinearLayout) findViewById(R.id.imagesContainer);
 
         Bundle bundle=getIntent().getExtras();
         selectedExpenses=bundle.getString("type");
 
+        addImgCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(Expense_Detail_Screen.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Expense_Detail_Screen.this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION);
 
+                }else if (ContextCompat.checkSelfPermission(Expense_Detail_Screen.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Expense_Detail_Screen.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
+
+                }else if (ContextCompat.checkSelfPermission(Expense_Detail_Screen.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Expense_Detail_Screen.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_PERMISSION);
+
+                }else{
+                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(cameraIntent, CAMERA_REQUEST);
+                }
+            }
+        });
+
+        addImgGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((ActivityCompat.checkSelfPermission(Expense_Detail_Screen.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
+                    Intent i=new Intent();
+                    i.setType("image/*");
+                    i.setAction(Intent.ACTION_GET_CONTENT);
+                    startActivityForResult(Intent.createChooser(i, "Select an Picture"), PICK_IMAGE);
+                } else {
+                    ActivityCompat.requestPermissions((Activity) Expense_Detail_Screen.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PERMISSION);
+                }
+            }
+        });
+
+//call function
+        getDBIndex();
 //      seting date and time picker
         etdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,7 +251,158 @@ public class Expense_Detail_Screen<expense_detail, expense_detail_screen, AddExp
 
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK){
+            filePath=data.getData();
+            imagesPathList.add(filePath);
+
+            Bitmap photo=(Bitmap) data.getExtras().get("data");
+            ImageView imageView=new ImageView(Expense_Detail_Screen.this);
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(150,250));
+            imageView.setMaxHeight(250);
+            imageView.setMaxWidth(150);
+            imageView.setPadding(10,0,10,0);
+            imageView.setImageBitmap(photo);
+            imagesContainer.addView(imageView);
+        }else if(requestCode == PICK_IMAGE && resultCode == RESULT_OK
+                && data != null && data.getData() != null){
+            filePath=data.getData();
+            imagesPathList.add(filePath);
+
+            try {
+                Bitmap bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                ImageView imageView=new ImageView(Expense_Detail_Screen.this);
+                imageView.setLayoutParams(new ViewGroup.LayoutParams(150,250));
+                imageView.setMaxHeight(250);
+                imageView.setMaxWidth(150);
+                imageView.setPadding(10,0,10,0);
+                imageView.setImageBitmap(bitmap);
+                imagesContainer.addView(imageView);
+            } catch (IOException e) {
+                progressDialog.dismiss();
+                Toast.makeText(Expense_Detail_Screen.this, e.toString(), Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+        }
+    }
+    public void getDBIndex(){
+        databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.child(selectedExpenses).exists()){
+                    for (DataSnapshot ds : dataSnapshot.child(selectedExpenses).getChildren()) {
+                        expensesIndex = Integer.parseInt(ds.getKey());
+                        Log.d("expensesIndex1", String.valueOf(expensesIndex));
+                    }
+                    expensesIndex++;
+//                    Log.d("expensesIndex2", String.valueOf(expensesIndex));
+//                    if(type){
+//                        addIntoDb(expensesIndex, true);
+//                    }else{
+                        addIntoDb(expensesIndex);
+//                    }
+//                  expensesIndex = Integer.parseInt(dataSnapshot.child(selectedExpenses).getKey());
+                }else{
+//                    Log.d("expensesIndex3", String.valueOf(expensesIndex));
+                    expensesIndex=0;
+////                    if(type){
+////                        addIntoDb(expensesIndex, true);
+////                    }else{
+                        addIntoDb(expensesIndex);
+//                    }
+                }
+            }
+        });
+    }
+
+    public void addIntoDb(int in){
+        final int index=in;
+        Expence_DB expensesDB = new Expence_DB();
+
+
+        if (imagesPathList.isEmpty()){
+            databaseReference2.child(selectedExpenses).child(String.valueOf(index)).setValue(expensesDB)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            clearEtValue();
+                            progressDialog.dismiss();
+                            Toast.makeText(Expense_Detail_Screen.this, "Expense Added!", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    progressDialog.dismiss();
+                    Toast.makeText(Expense_Detail_Screen.this, "Failed to add: "+e.toString(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }else{
+
+            databaseReference2.child(selectedExpenses).child(String.valueOf(index)).setValue(expensesDB)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            for (int i=0; i < imagesPathList.size(); i++){
+                                final int j=i;
+                                storageReference
+                                        .child(selectedExpenses)
+                                        .child(key)
+                                        .child(String.valueOf(index))
+                                        .child(String.valueOf(i))
+                                        .putFile(imagesPathList.get(i))
+                                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                            @Override
+                                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                                storageReference
+                                                        .child(selectedExpenses)
+                                                        .child(key)
+                                                        .child(String.valueOf(index))
+                                                        .child(String.valueOf(j))
+                                                        .getDownloadUrl()
+                                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                            @Override
+                                                            public void onSuccess(Uri uri) {
+                                                                imagesDbPathList.add(String.valueOf(uri));
+                                                                if ( j == imagesPathList.size()-1 ){
+                                                                    addImageIntoFirebase(index);
+                                                                }
+                                                            }
+                                                        });
+                                            }
+                                        });
+                            }
+
+                        }
+                    });
+        }
+    }
+
+    public void addImageIntoFirebase(int index){
+        for(int i=0; i<imagesDbPathList.size(); i++) {
+            databaseReference2.child(selectedExpenses).child(String.valueOf(index))
+                    .child("images")
+                    .child(String.valueOf(i))
+                    .setValue(imagesDbPathList.get(i))
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            progressDialog.dismiss();
+                            Toast.makeText(Expense_Detail_Screen.this, "Expense Added!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
+                            Toast.makeText(Expense_Detail_Screen.this, "Failed"+e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+        imagesContainer.removeAllViews();
+        clearEtValue();
+    }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         selectedExpenses=expences[position];
@@ -194,13 +413,13 @@ public class Expense_Detail_Screen<expense_detail, expense_detail_screen, AddExp
 
     }
 
-    public void addIntoDb(int index){
-        Expence_DB expensesDB = new Expence_DB(title, date, time, meterreading, price);
-        databaseReference2.child(selectedExpenses).child(String.valueOf(index)).setValue(expensesDB);
-        clearEtValue();
-        Toast.makeText(Expense_Detail_Screen.this, "Expense Added!", Toast.LENGTH_SHORT).show();
-
-    }
+//    public void addIntoDb(int index){
+//        Expence_DB expensesDB = new Expence_DB(title, date, time, meterreading, price);
+//        databaseReference2.child(selectedExpenses).child(String.valueOf(index)).setValue(expensesDB);
+//        clearEtValue();
+//        Toast.makeText(Expense_Detail_Screen.this, "Expense Added!", Toast.LENGTH_SHORT).show();
+//
+//    }
 
     public void clearEtValue(){
         ettitle.setText("");

@@ -10,8 +10,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.androidcarmanager.add.Add_Files_Screen;
+import com.example.androidcarmanager.add.Add_Notes_Screen;
 import com.example.androidcarmanager.copmute.Compute_Screen;
 import com.example.androidcarmanager.Expences.Add_Expenses_Screen;
 import com.example.androidcarmanager.capture.Gallery_Screen;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     //    int vehicleId;
     Boolean isrunningfirst;
+    ImageButton btnsavereading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
                     getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                             .getString("vehicle", "Nothing Selected")
                     + ")</font>"));
+
+            btnsavereading=(ImageButton)findViewById(R.id.fabbuttonodometer);
+            btnsavereading.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i=new Intent(MainActivity.this, Odometer_Screen.class);
+                    i.putExtra("type","add");
+                    startActivity(i);
+                }
+            });
 
 
         }

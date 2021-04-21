@@ -1,13 +1,18 @@
 package com.example.androidcarmanager.capture;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +36,7 @@ import java.util.ArrayList;
 
 public class Capture_image_Screen extends AppCompatActivity {
     ImageView imageView;
-    Button captureImageBtn, uploadImageBtn;
+    Button imageCaptureBtn, imageUploadIBtn;
 
     private static final int CAMERA_REQUEST = 0;
 
@@ -41,21 +46,22 @@ public class Capture_image_Screen extends AppCompatActivity {
     int expensesIndex;
     ArrayList<Uri> pathList = new ArrayList<Uri>();
     private DatabaseReference databaseReference1;
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth Auth;
     private StorageReference storageReference;
     private FirebaseStorage storage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_image__screen);
-        setTitle("Upload Image");
+//        setTitle("Upload Image");
+        setTitle(Html.fromHtml("<font color='#3477e3'>Upload Image</font>"));
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() == null) {
+        Auth = FirebaseAuth.getInstance();
+        if (Auth.getCurrentUser() == null) {
             finish();
             startActivity(new Intent(Capture_image_Screen.this, Login_Screen.class));
         }
-        final FirebaseUser user=firebaseAuth.getCurrentUser();
+        final FirebaseUser user=Auth.getCurrentUser();
         key= getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                 .getString("key","-1");
         databaseReference1= FirebaseDatabase.getInstance().getReference("users/"+user.getUid()+"/gallery/");
@@ -67,29 +73,27 @@ public class Capture_image_Screen extends AppCompatActivity {
 
         imageView=(ImageView)findViewById(R.id.imgView);
 //        spinner=(Spinner)findViewById(R.id.spinner);
-        captureImageBtn=(Button) findViewById(R.id.reclickImage);
-        uploadImageBtn=(Button) findViewById(R.id.btnupload);
+        imageCaptureBtn=(Button) findViewById(R.id.reclickimage);
+        imageUploadIBtn=(Button) findViewById(R.id.uploadbutton);
 //        spinner.setOnItemSelectedListener(this);
 
 //        ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,service);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        spinner.setAdapter(adapter);
-
-        captureImageBtn.setOnClickListener(new View.OnClickListener() {
+        imageCaptureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                capture();
+                if (ContextCompat.checkSelfPermission(Capture_image_Screen.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Capture_image_Screen.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 790);
+                    capture();
+                }
+
             }
         });
-//        databaseReference1.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-//            @Override
-//            public void onSuccess(DataSnapshot dataSnapshot) {
-//                for(DataSnapshot ds:dataSnapshot.getChildren()){
-//                    keys.add(ds.getKey());
-//                }
-//            }
-//        });
-        uploadImageBtn.setOnClickListener(new View.OnClickListener() {
+
+
+
+        imageUploadIBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(key.equals("-1")) {

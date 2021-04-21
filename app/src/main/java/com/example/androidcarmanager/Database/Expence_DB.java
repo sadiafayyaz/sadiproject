@@ -3,10 +3,12 @@ package com.example.androidcarmanager.Database;
 public class Expence_DB {
     String expenseTitle;
     Long date, time;
-    Double odometer, price;
+    Double odometer, price,liter;
+    String images;
 
     public Expence_DB() {
     }
+//other expences
 
     public Expence_DB(String expenseTitle, Long date, Long time, Double odometer, Double price) {
         this.expenseTitle = expenseTitle;
@@ -14,6 +16,41 @@ public class Expence_DB {
         this.time = time;
         this.odometer = odometer;
         this.price = price;
+    }
+
+    //odomeeter
+    public Expence_DB(Long date, Long time, Double odometer) {
+        this.date = date;
+        this.time = time;
+        this.odometer = odometer;
+    }
+//fuel
+    public Expence_DB(String expenseTitle, Long date, Long time, Double odometer, Double price, Double liter) {
+        this.expenseTitle = expenseTitle;
+        this.date = date;
+        this.time = time;
+        this.odometer = odometer;
+        this.price = price;
+        this.liter = liter;
+    }
+//for images
+
+
+    public Expence_DB(String expenseTitle, Long date, Long time, Double odometer, Double price, String images) {
+        this.expenseTitle = expenseTitle;
+        this.date = date;
+        this.time = time;
+        this.odometer = odometer;
+        this.price = price;
+        this.images = images;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 
     public String getExpenseTitle() {
@@ -46,6 +83,14 @@ public class Expence_DB {
 
     public void setOdometer(Double odometer) {
         this.odometer = odometer;
+    }
+
+    public Double getliter() {
+        return liter;
+    }
+
+    public void setliter(Double liter) {
+        this.liter = liter;
     }
 
     public Double getCost() {

@@ -34,7 +34,7 @@ public class Add_Expenses_Screen extends AppCompatActivity {
                     startActivity(i);
                 }break;
                 case R.id.card3:{
-                    Intent  i= new Intent(Add_Expenses_Screen.this, Expense_Detail_Screen.class);
+                    Intent  i= new Intent(Add_Expenses_Screen.this, Fuel_Screen.class);
                     i.putExtra("type", "fuel");
                     startActivity(i);
                 }break;

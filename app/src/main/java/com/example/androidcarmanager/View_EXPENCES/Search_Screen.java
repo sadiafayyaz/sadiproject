@@ -37,14 +37,14 @@ public class Search_Screen extends AppCompatActivity {
     ListView listOfSerches;
     List_Adapter adapter;
     //  values from firebase
-    ArrayList<String> maintenance = new ArrayList<String>();
-    ArrayList<Long> maintenanceDate = new ArrayList<Long>();
-    ArrayList<String> fuel = new ArrayList<String>();
-    ArrayList<Long> fuelDate = new ArrayList<Long>();
-    ArrayList<String> purchase = new ArrayList<String>();
-    ArrayList<Long> purchaseDate = new ArrayList<Long>();
     ArrayList<String> cleaning = new ArrayList<String>();
     ArrayList<Long> cleacingDate = new ArrayList<Long>();
+    ArrayList<String> fuel = new ArrayList<String>();
+    ArrayList<Long> fuelDate = new ArrayList<Long>();
+    ArrayList<String> maintenance = new ArrayList<String>();
+    ArrayList<Long> maintenanceDate = new ArrayList<Long>();
+    ArrayList<String> purchase = new ArrayList<String>();
+    ArrayList<Long> purchaseDate = new ArrayList<Long>();
     ArrayList<String> enginetuning = new ArrayList<String>();
     ArrayList<Long> enginetuningDate = new ArrayList<Long>();
 
@@ -67,6 +67,7 @@ public class Search_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search__screen);
         setTitle(Html.fromHtml("<font color='#3477e3'>Search Expences</font>"));
+
         Auth = FirebaseAuth.getInstance();
         user = Auth.getCurrentUser();
         if (Auth.getCurrentUser() == null) {
@@ -79,7 +80,7 @@ public class Search_Screen extends AppCompatActivity {
         setTitle("Search Expenses");
         etStartDate=(EditText) findViewById(R.id.startdate);
         etEndDate=(EditText) findViewById(R.id.enddate);
-        etSearchTitle=(EditText) findViewById(R.id.expencetitle);
+        etSearchTitle=(EditText) findViewById(R.id.searchTitleEt);
         listOfSerches =(ListView) findViewById(R.id.searchList);
         btnSecrchList=(Button) findViewById(R.id.btnsearch);
 
@@ -154,14 +155,48 @@ public class Search_Screen extends AppCompatActivity {
             public void onSuccess(DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
 //                  maintenance
-                    if (dataSnapshot.child("Maintenance").exists()) {
-                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/Maintenance");
+                    //        Cleaning
+                    if (dataSnapshot.child("cleaning").exists()) {
+                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/cleaning");
                         databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
                             @Override
                             public void onSuccess(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                     Expence_DB expensesDB = ds.getValue(Expence_DB.class);
-                                    Log.d("expensesDB(maintena)", expensesDB.getExpenseTitle());
+                                    Log.d("expensesDB(cleaning)", expensesDB.getExpenseTitle());
+                                    cleaning.add(expensesDB.getExpenseTitle());
+                                    cleacingDate.add(expensesDB.getDate());
+                                }
+                            }
+                        });
+                    } else {
+                        Log.d("cleaning", "Empty");
+                    }
+                    //        fuel
+                    if (dataSnapshot.child("fuel").exists()) {
+                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/fuel");
+                        databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                            @Override
+                            public void onSuccess(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                    Expence_DB expensesDB = ds.getValue(Expence_DB.class);
+                                    Log.d("expensesDB(fuel)", expensesDB.getExpenseTitle());
+                                    cleaning.add(expensesDB.getExpenseTitle());
+                                    cleacingDate.add(expensesDB.getDate());
+                                }
+                            }
+                        });
+                    } else {
+                        Log.d("fuel", "Empty");
+                    }
+                    if (dataSnapshot.child("maintance").exists()) {
+                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/maintance");
+                        databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                            @Override
+                            public void onSuccess(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                    Expence_DB expensesDB = ds.getValue(Expence_DB.class);
+                                    Log.d("expensesDB(maintance)", expensesDB.getExpenseTitle());
                                     maintenance.add(expensesDB.getExpenseTitle());
                                     maintenanceDate.add(expensesDB.getDate());
                                 }
@@ -169,82 +204,50 @@ public class Search_Screen extends AppCompatActivity {
                             }
                         });
                         for (String ti:maintenance){
-                            Log.d("maintenance", ti);
+                            Log.d("maintance", ti);
                         }
                     } else {
-                        Log.d("expensesDB(maintenance)", "Empty");
+                        Log.d("expensesDB(maintance)", "Empty");
                     }
 
-//                  fuel
-                    if (dataSnapshot.child("Fuel").exists()) {
-                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/Fuel");
-                        databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                            @Override
-                            public void onSuccess(DataSnapshot dataSnapshot) {
-                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                    Expence_DB expensesDB = ds.getValue(Expence_DB.class);
-                                    Log.d("expensesDB(fuel)", expensesDB.getExpenseTitle());
-                                    fuel.add(expensesDB.getExpenseTitle());
-                                    fuelDate.add(expensesDB.getDate());
-                                }
-                            }
-                        });
-                    } else {
-                        Log.d("fuel", "Empty");
-                    }
+//
 
 //                  purchase
-                    if (dataSnapshot.child("Purchase").exists()) {
-                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/Purchase");
+                    if (dataSnapshot.child("purchases spare parts").exists()) {
+                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/purchases spare parts");
                         databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
                             @Override
                             public void onSuccess(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                     Expence_DB expensesDB = ds.getValue(Expence_DB.class);
-                                    Log.d("expensesDB(purchase)", expensesDB.getExpenseTitle());
+                                    Log.d("expensesDB(purchases)", expensesDB.getExpenseTitle());
                                     purchase.add(expensesDB.getExpenseTitle());
                                     purchaseDate.add(expensesDB.getDate());
                                 }
                             }
                         });
                     } else {
-                        Log.d("purchase", "Empty");
+                        Log.d("purchases", "Empty");
                     }
 
-//                  services
-                    if (dataSnapshot.child("Cleaning").exists()) {
-                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/Service");
+
+
+//               engine tuning
+                    if (dataSnapshot.child("engine tuning").exists()) {
+                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/engine tuning");
                         databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
                             @Override
                             public void onSuccess(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                     Expence_DB expensesDB = ds.getValue(Expence_DB.class);
-                                    Log.d("expensesDB(Cleaning)", expensesDB.getExpenseTitle());
-                                    cleaning.add(expensesDB.getExpenseTitle());
-                                    cleacingDate.add(expensesDB.getDate());
-                                }
-                            }
-                        });
-                    } else {
-                        Log.d("Cleaning", "Empty");
-                    }
-
-//                  fine
-                    if (dataSnapshot.child("Engine Tuning").exists()) {
-                        databaseReference2 = FirebaseDatabase.getInstance().getReference("users/" + user.getUid() + "/expenses/" + vehicleId + "/Fine");
-                        databaseReference2.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                            @Override
-                            public void onSuccess(DataSnapshot dataSnapshot) {
-                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                    Expence_DB expensesDB = ds.getValue(Expence_DB.class);
-                                    Log.d("expensesDB(tuning)", expensesDB.getExpenseTitle());
+                                    Log.d("expensesDB(Engine)", expensesDB.getExpenseTitle());
                                     enginetuning.add(expensesDB.getExpenseTitle());
                                     enginetuningDate.add(expensesDB.getDate());
                                 }
                             }
                         });
                     } else {
-                        Log.d("Enging tuning", "Empty");
+                        Log.d("Engine", "Empty");
                     }
 
 
@@ -267,18 +270,20 @@ public class Search_Screen extends AppCompatActivity {
 
     public void setListforAdapter(){
         Calendar c=Calendar.getInstance();
-//      maintenance
-        if (!maintenance.isEmpty() && !maintenanceDate.isEmpty()){
-            for (String title:maintenance){
+        //      cleaning
+        if (!cleaning.isEmpty() && !cleacingDate.isEmpty()){
+            for (String title:cleaning){
                 titles.add(title);
                 Log.d("setAdapter", title);
             }
-            for (Long date:maintenanceDate){
+            for (Long date:cleacingDate){
 //                c.setTimeInMillis(date);
 //                dates.add(c.get(Calendar.DAY_OF_MONTH)+"/"+(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.YEAR));
                 dates.add(date);
             }
         }
+
+//
 //      fuel
         if (!fuel.isEmpty() && !fuelDate.isEmpty()){
             for (String title:fuel){
@@ -291,6 +296,18 @@ public class Search_Screen extends AppCompatActivity {
                 dates.add(date);
             }
         }
+    //    maintenance
+        if (!maintenance.isEmpty() && !maintenanceDate.isEmpty()){
+            for (String title:maintenance){
+                titles.add(title);
+                Log.d("setAdapter", title);
+            }
+            for (Long date:maintenanceDate){
+//                c.setTimeInMillis(date);
+//                dates.add(c.get(Calendar.DAY_OF_MONTH)+"/"+(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.YEAR));
+                dates.add(date);
+            }
+        }
 //      purchase
         if (!purchase.isEmpty() && !purchaseDate.isEmpty()){
             for (String title:purchase){
@@ -298,18 +315,6 @@ public class Search_Screen extends AppCompatActivity {
                 Log.d("setAdapter", title);
             }
             for (Long date:purchaseDate){
-//                c.setTimeInMillis(date);
-//                dates.add(c.get(Calendar.DAY_OF_MONTH)+"/"+(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.YEAR));
-                dates.add(date);
-            }
-        }
-//      service
-        if (!cleaning.isEmpty() && !cleacingDate.isEmpty()){
-            for (String title:cleaning){
-                titles.add(title);
-                Log.d("setAdapter", title);
-            }
-            for (Long date:cleacingDate){
 //                c.setTimeInMillis(date);
 //                dates.add(c.get(Calendar.DAY_OF_MONTH)+"/"+(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.YEAR));
                 dates.add(date);
